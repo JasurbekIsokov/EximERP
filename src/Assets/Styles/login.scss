@@ -1,0 +1,111 @@
+.login {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 1024px;
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: flex-start;
+
+  &__left {
+    width: 780px;
+    height: 100%;
+    background-image: url(../images/login-img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__form {
+    width: 536px;
+    height: 740px;
+    background: #ffffff;
+    box-shadow: 0px 0px 7px rgba(223, 223, 223, 0.25);
+    border-radius: 15px;
+    margin-left: 24px;
+    margin-top: 142px;
+    text-align: center;
+    padding: 21px;
+
+    &--data {
+      margin-top: 32.44px;
+    }
+
+    &--title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 25px;
+      text-align: center;
+      color: #383838;
+      margin-bottom: 20px;
+    }
+
+    &--profile {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      padding: 15px 17px;
+      background: #ffffff;
+      border: 1px solid #004263;
+      border-radius: 10px;
+      margin-bottom: 10px;
+
+      img {
+        width: 29px;
+        height: 29px;
+        margin-right: 17px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &--description {
+      text-align: left;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    &--profile-name {
+      font-size: 16px;
+      line-height: 20px;
+      color: #383838;
+    }
+
+    &--profile--desc {
+      font-size: 14px;
+      line-height: 18px;
+      color: #a0a0a0;
+    }
+
+    &--register {
+      background: #f8f8f8;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      font-style: normal;
+      font-weight: 400;
+
+      p {
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: #8a8a8a;
+      }
+
+      button {
+        width: 454px;
+        padding: 15px;
+        background: #004263;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #ffffff;
+        margin-top: 10px;
+      }
+    }
+  }
+}
