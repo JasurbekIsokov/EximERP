@@ -1,13 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import profile from "../Assets/images/icons/login-login-icon.png";
 import build from "../Assets/images/icons/building-icon.png";
 
 const LoginFormData = () => {
+  const navigate = useNavigate();
+
+  const navClick = () => {
+    navigate("/oformleniya");
+  };
+
   return (
     <div className="login__form--data">
       <div className="login__form--title">Вход с помощью ЭЦП</div>
-      <div className="login__form--profile1 login__form--profile">
+      <div
+        className="login__form--profile1 login__form--profile"
+        onClick={navClick}
+      >
         <img src={profile} alt="profile" />
         <div className="login__form--description">
           <p className="login__form--profile-name">

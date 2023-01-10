@@ -8,7 +8,7 @@ import "./Assets/Styles/home.scss";
 import "./Assets/Styles/login.scss";
 
 // Pages
-import { Home, Login } from "./Pages";
+import { Home, Login, Oformleniya } from "./Pages";
 
 const App = () => {
   return (
@@ -16,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/oformleniya" element={<Oformleniya />} />
       </Routes>
     </Router>
   );
