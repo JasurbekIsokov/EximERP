@@ -6,6 +6,7 @@ import "./Assets/Styles/index.scss";
 import "./Assets/Styles/fonts.scss";
 import "./Assets/Styles/home.scss";
 import "./Assets/Styles/login.scss";
+import "./Assets/Styles/oformleniya.scss";
 
 // Pages
 import { Home, Login, Oformleniya } from "./Pages";
