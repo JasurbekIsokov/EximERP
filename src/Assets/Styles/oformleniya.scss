@@ -3,6 +3,10 @@
   margin: 0 auto;
   display: flex;
   justify-content: start;
+
+  &__right-section {
+    width: 100%;
+  }
 }
 
 .sidebar {
@@ -44,5 +48,32 @@
 
   &__logo {
     transform: scale(0.735);
+  }
+}
+
+.header {
+  width: 100%;
+  background: #535c6b;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 24px 30px;
+
+  img {
+    cursor: pointer;
+  }
+
+  img:first-child {
+    margin-right: 32px;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    margin-right: 15px;
+    margin-left: 12px;
+    cursor: pointer;
   }
 }
