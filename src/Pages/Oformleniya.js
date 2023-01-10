@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Petition } from "../Components";
 import Header from "../Layouts/Header";
 import Sidebar from "../Layouts/Sidebar";
 
@@ -10,6 +11,7 @@ const Oformleniya = () => {
 
       <div className="oformleniya__right-section">
         <Header />
+        <Petition />
       </div>
     </div>
   );

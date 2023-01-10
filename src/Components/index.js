@@ -6,3 +6,8 @@ export { default as HomeNavbar } from "./HomeNavbar";
 export { default as LoginForm } from "./LoginForm";
 export { default as LoginFormData } from "./LoginFormData";
 export { default as LoginFormRegister } from "./LoginFormRegister";
+export { default as Petition } from "./Petition";
+export { default as Processing } from "./Processing";
+export { default as Rejected } from "./Rejected";
+export { default as Completed } from "./Completed";
+export { default as FollowSteps } from "./Rejected";
