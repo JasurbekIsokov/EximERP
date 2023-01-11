@@ -4,8 +4,12 @@ import { useStateContext } from "../Contexts/ContextProvider";
 import arrowBottomGray from "../Assets/images/icons/arrow-gray.png";
 
 const Completed = () => {
-  const { activeDataCompleted, closeDataCompleted, dataOpenClickedCompleted } =
-    useStateContext();
+  const {
+    activeDataCompleted,
+    closeDataCompleted,
+    dataOpenClickedCompleted,
+    handleToogleSubmitRejected,
+  } = useStateContext();
 
   return (
     <div className="all-petition completed">
@@ -15,7 +19,12 @@ const Completed = () => {
           <p>от 15 октября 2020г. в 16:18</p>
         </div>
         <div className="all-petition__main--right">
-          <button className="completed-bnt btn">Завершена</button>
+          <button
+            className="completed-bnt btn"
+            onClick={handleToogleSubmitRejected}
+          >
+            Завершена
+          </button>
           <img
             src={arrowBottomGray}
             alt="arrow bottom"

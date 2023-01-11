@@ -18,6 +18,7 @@ export const ContextProvider = ({ children }) => {
   const [toogleNavLink, setToogleNavLink] = useState(false);
   const [tooglePetition, setTooglePetition] = useState(false);
   const [toogleSubmitFollowSteps, setToogleSubmitFollowSteps] = useState(false);
+  const [toogleSubmitRejected, setToogleSubmitRejected] = useState(false);
 
   const [isClicked, setIsClicked] = useState(initialState);
   // icons clicked
@@ -97,6 +98,14 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
+  const handleToogleSubmitRejected = () => {
+    if (toogleSubmitRejected) {
+      setToogleSubmitRejected(false);
+    } else {
+      setToogleSubmitRejected(true);
+    }
+  };
+
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true });
   };
@@ -135,6 +144,9 @@ export const ContextProvider = ({ children }) => {
 
         toogleSubmitFollowSteps,
         handleToogleSubmitFollowSteps,
+
+        toogleSubmitRejected,
+        handleToogleSubmitRejected,
 
         isClicked,
         handleClick,

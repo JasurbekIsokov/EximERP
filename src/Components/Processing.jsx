@@ -8,6 +8,7 @@ const Processing = () => {
     activeDataProcessing,
     closeDataProcessing,
     dataOpenClickedProcessing,
+    handleToogleSubmitRejected,
   } = useStateContext();
 
   return (
@@ -18,7 +19,12 @@ const Processing = () => {
           <p>от 15 октября 2020г. в 16:18</p>
         </div>
         <div className="all-petition__main--right">
-          <button className="processing-bnt btn">В обработке</button>
+          <button
+            className="processing-bnt btn"
+            onClick={handleToogleSubmitRejected}
+          >
+            В обработке
+          </button>
           <img
             src={arrowBottomGray}
             alt="arrow bottom"

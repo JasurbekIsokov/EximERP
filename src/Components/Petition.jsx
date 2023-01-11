@@ -7,10 +7,15 @@ import Processing from "./Processing";
 import Rejected from "./Rejected";
 import SubmitFollowSteps from "./SubmitFollowSteps";
 import SubmitPetition from "./SubmitPetition";
+import SubmitRejected from "./SubmitRejected";
 
 const Petition = () => {
-  const { handletooglePetition, tooglePetition, toogleSubmitFollowSteps } =
-    useStateContext();
+  const {
+    handletooglePetition,
+    tooglePetition,
+    toogleSubmitFollowSteps,
+    toogleSubmitRejected,
+  } = useStateContext();
 
   return (
     <>
@@ -43,6 +48,13 @@ const Petition = () => {
         style={{ display: toogleSubmitFollowSteps ? "inline-block" : "none" }}
       >
         {toogleSubmitFollowSteps && <SubmitFollowSteps />}
+      </div>
+
+      <div
+        className="petition__back"
+        style={{ display: toogleSubmitRejected ? "inline-block" : "none" }}
+      >
+        {toogleSubmitRejected && <SubmitRejected />}
       </div>
     </>
   );

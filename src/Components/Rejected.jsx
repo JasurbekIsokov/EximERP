@@ -4,8 +4,12 @@ import { useStateContext } from "../Contexts/ContextProvider";
 import arrowBottomGray from "../Assets/images/icons/arrow-gray.png";
 
 const Rejected = () => {
-  const { activeDataRejected, closeDataRejected, dataOpenClickedRejected } =
-    useStateContext();
+  const {
+    activeDataRejected,
+    closeDataRejected,
+    dataOpenClickedRejected,
+    handleToogleSubmitRejected,
+  } = useStateContext();
 
   return (
     <div className="all-petition rejected">
@@ -15,7 +19,9 @@ const Rejected = () => {
           <p>от 15 октября 2020г. в 16:18</p>
         </div>
         <div className="all-petition__main--right">
-          <button className="btn">Отклонена</button>
+          <button className="btn" onClick={handleToogleSubmitRejected}>
+            Отклонена
+          </button>
           <img
             src={arrowBottomGray}
             alt="arrow bottom"
