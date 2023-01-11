@@ -1,8 +1,11 @@
 import React from "react";
 
+import { useStateContext } from "../Contexts/ContextProvider";
+
 import HomeLogo from "../Components/HomeLogo";
 
 const Sidebar = () => {
+  const { toogleNavLink } = useStateContext();
   return (
     <div className="sidebar">
       <div className="sidebar__logo">
@@ -31,6 +34,10 @@ const Sidebar = () => {
           </li>
           <li>
             <a href="#">Помощь</a>
+          </li>
+
+          <li style={{ display: toogleNavLink ? "inline-block" : "none" }}>
+            <a href="#">Контакты</a>
           </li>
         </ul>
       </div>

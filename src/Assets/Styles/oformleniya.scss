@@ -111,6 +111,7 @@
     border-radius: 10px;
     margin: 10px 0;
     cursor: pointer;
+    transition: all 0.1s;
 
     &__main {
       display: flex;
@@ -139,14 +140,16 @@
       }
 
       &--right {
+        width: 283px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         gap: 10px;
 
         button {
           background: #850000;
           cursor: pointer;
+          width: 231px;
         }
 
         .processing-bnt {
@@ -166,6 +169,7 @@
           padding: 18px 16px;
           background: #f9f9f9;
           border-radius: 10px;
+          transition: all 0.4s;
         }
       }
     }
@@ -173,6 +177,8 @@
     &__hero {
       display: flex;
       justify-content: space-between;
+
+      transition: all 1s;
 
       &--left {
         width: 100%;

@@ -1,8 +1,15 @@
 import React from "react";
 
+import { useStateContext } from "../Contexts/ContextProvider";
 import arrowBottomGray from "../Assets/images/icons/arrow-gray.png";
 
 const Processing = () => {
+  const {
+    activeDataProcessing,
+    closeDataProcessing,
+    dataOpenClickedProcessing,
+  } = useStateContext();
+
   return (
     <div className="all-petition processing">
       <div className="all-petition__main">
@@ -12,11 +19,23 @@ const Processing = () => {
         </div>
         <div className="all-petition__main--right">
           <button className="processing-bnt btn">В обработке</button>
-          <img src={arrowBottomGray} alt="arrow bottom" />
+          <img
+            src={arrowBottomGray}
+            alt="arrow bottom"
+            onClick={dataOpenClickedProcessing}
+            style={{
+              transform: activeDataProcessing
+                ? "rotate(-180deg)"
+                : "rotate(0deg)",
+            }}
+          />
         </div>
       </div>
 
-      <div className="all-petition__hero">
+      <div
+        className="all-petition__hero"
+        style={{ display: activeDataProcessing ? "flex" : "none" }}
+      >
         <div className="all-petition__hero--left">
           <div className="all-petition__hero--left-1">
             <h4>
@@ -24,9 +43,7 @@ const Processing = () => {
             </h4>
           </div>
         </div>
-        <div className="all-petition__hero--right">
-          <img src={arrowBottomGray} alt="arrow bottom" />
-        </div>
+        <div className="all-petition__hero--right"></div>
       </div>
     </div>
   );

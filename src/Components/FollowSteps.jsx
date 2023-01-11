@@ -1,8 +1,15 @@
 import React from "react";
 
+import { useStateContext } from "../Contexts/ContextProvider";
 import arrowBottomGray from "../Assets/images/icons/arrow-gray.png";
 
 const FollowSteps = () => {
+  const {
+    activeDataFollowSteps,
+    closeDataFollowSteps,
+    dataOpenClickedFollowSteps,
+  } = useStateContext();
+
   return (
     <div className="all-petition followSteps">
       <div className="all-petition__main">
@@ -12,11 +19,23 @@ const FollowSteps = () => {
         </div>
         <div className="all-petition__main--right">
           <button className="followSteps-btn btn">Выполните действия</button>
-          <img src={arrowBottomGray} alt="arrow bottom" />
+          <img
+            src={arrowBottomGray}
+            alt="arrow bottom"
+            onClick={dataOpenClickedFollowSteps}
+            style={{
+              transform: activeDataFollowSteps
+                ? "rotate(-180deg)"
+                : "rotate(0deg)",
+            }}
+          />
         </div>
       </div>
 
-      <div className="all-petition__hero">
+      <div
+        className="all-petition__hero"
+        style={{ display: activeDataFollowSteps ? "flex" : "none" }}
+      >
         <div className="all-petition__hero--left">
           <div className="all-petition__hero--left-1">
             <h4>
@@ -37,9 +56,7 @@ const FollowSteps = () => {
             </p>
           </div>
         </div>
-        <div className="all-petition__hero--right">
-          <img src={arrowBottomGray} alt="arrow bottom" />
-        </div>
+        <div className="all-petition__hero--right"></div>
       </div>
     </div>
   );

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
+import { useStateContext } from "../Contexts/ContextProvider";
 import arrowBottomGray from "../Assets/images/icons/arrow-gray.png";
 
 const Rejected = () => {
+  const { activeDataRejected, closeDataRejected, dataOpenClickedRejected } =
+    useStateContext();
+
   return (
     <div className="all-petition rejected">
       <div className="all-petition__main">
@@ -12,11 +16,21 @@ const Rejected = () => {
         </div>
         <div className="all-petition__main--right">
           <button className="btn">Отклонена</button>
-          <img src={arrowBottomGray} alt="arrow bottom" />
+          <img
+            src={arrowBottomGray}
+            alt="arrow bottom"
+            onClick={dataOpenClickedRejected}
+            style={{
+              display: activeDataRejected ? "none" : "flex",
+            }}
+          />
         </div>
       </div>
 
-      <div className="all-petition__hero">
+      <div
+        className="all-petition__hero"
+        style={{ display: activeDataRejected ? "flex" : "none" }}
+      >
         <div className="all-petition__hero--left">
           <div className="all-petition__hero--left-1">
             <h4>
@@ -38,7 +52,12 @@ const Rejected = () => {
           </div>
         </div>
         <div className="all-petition__hero--right">
-          <img src={arrowBottomGray} alt="arrow bottom" />
+          <img
+            src={arrowBottomGray}
+            alt="arrow bottom"
+            onClick={dataOpenClickedRejected}
+            style={{ display: closeDataRejected ? "none" : "inline-block" }}
+          />
         </div>
       </div>
     </div>
