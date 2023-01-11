@@ -14,7 +14,7 @@ export const ContextProvider = ({ children }) => {
   const [activeDataFollowSteps, setActiveDataFollowSteps] = useState(false);
   const [closeDataFollowSteps, setCloseDataFollowSteps] = useState(true);
   const [toogleNavLink, setToogleNavLink] = useState(false);
-
+  const [tooglePetition, setTooglePetition] = useState(false);
   // icons clicked
   const dataOpenClickedRejected = () => {
     if (activeDataRejected) {
@@ -76,6 +76,14 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
+  const handletooglePetition = () => {
+    if (tooglePetition) {
+      setTooglePetition(false);
+    } else {
+      setTooglePetition(true);
+    }
+  };
+
   return (
     <StateContext.Provider
       value={{
@@ -104,6 +112,9 @@ export const ContextProvider = ({ children }) => {
         dataOpenClickedFollowSteps,
 
         toogleNavLink,
+
+        handletooglePetition,
+        tooglePetition,
 
         initialState,
       }}
