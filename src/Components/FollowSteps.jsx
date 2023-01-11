@@ -8,6 +8,7 @@ const FollowSteps = () => {
     activeDataFollowSteps,
     closeDataFollowSteps,
     dataOpenClickedFollowSteps,
+    handleToogleSubmitFollowSteps,
   } = useStateContext();
 
   return (
@@ -18,7 +19,12 @@ const FollowSteps = () => {
           <p>от 15 октября 2020г. в 16:18</p>
         </div>
         <div className="all-petition__main--right">
-          <button className="followSteps-btn btn">Выполните действия</button>
+          <button
+            className="followSteps-btn btn"
+            onClick={handleToogleSubmitFollowSteps}
+          >
+            Выполните действия
+          </button>
           <img
             src={arrowBottomGray}
             alt="arrow bottom"

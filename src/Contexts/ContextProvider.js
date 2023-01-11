@@ -2,7 +2,9 @@ import React, { createContext, useContext, useState } from "react";
 
 const StateContext = createContext();
 
-const initialState = {};
+const initialState = {
+  submitPetition: false,
+};
 
 export const ContextProvider = ({ children }) => {
   const [activeDataRejected, setActiveDataRejected] = useState(false);
@@ -15,6 +17,9 @@ export const ContextProvider = ({ children }) => {
   const [closeDataFollowSteps, setCloseDataFollowSteps] = useState(true);
   const [toogleNavLink, setToogleNavLink] = useState(false);
   const [tooglePetition, setTooglePetition] = useState(false);
+  const [toogleSubmitFollowSteps, setToogleSubmitFollowSteps] = useState(false);
+
+  const [isClicked, setIsClicked] = useState(initialState);
   // icons clicked
   const dataOpenClickedRejected = () => {
     if (activeDataRejected) {
@@ -84,6 +89,18 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
+  const handleToogleSubmitFollowSteps = () => {
+    if (toogleSubmitFollowSteps) {
+      setToogleSubmitFollowSteps(false);
+    } else {
+      setToogleSubmitFollowSteps(true);
+    }
+  };
+
+  const handleClick = (clicked) => {
+    setIsClicked({ ...initialState, [clicked]: true });
+  };
+
   return (
     <StateContext.Provider
       value={{
@@ -116,6 +133,11 @@ export const ContextProvider = ({ children }) => {
         handletooglePetition,
         tooglePetition,
 
+        toogleSubmitFollowSteps,
+        handleToogleSubmitFollowSteps,
+
+        isClicked,
+        handleClick,
         initialState,
       }}
     >

@@ -5,8 +5,8 @@ import closeIcon from "../Assets/images/icons/close-icon.png";
 import arrowBottom from "../Assets/images/icons/arrow-blue.png";
 import arrowRight from "../Assets/images/icons/arrow-right-mini.png";
 
-const SubmitPetition = () => {
-  const { handletooglePetition, tooglePetition, handleClick } =
+const SubmitFollowSteps = () => {
+  const { handleToogleSubmitFollowSteps, toogleSubmitFollowSteps } =
     useStateContext();
 
   return (
@@ -15,11 +15,11 @@ const SubmitPetition = () => {
       <div className="submit-petition__form">
         <div
           className="submit-petition__form--close"
-          onClick={handletooglePetition}
+          onClick={handleToogleSubmitFollowSteps}
         >
           <img src={closeIcon} alt="close icon" />
         </div>
-        <h2 className="submit-petition__form--title">Добавление заявки</h2>
+        <h2 className="submit-petition__form--title">Заявка№ 743256</h2>
         <p className="submit-petition__form--miniTitle">Выбор процедуры</p>
         <div className="submit-petition__form--items">
           <p>Выбрать...</p>
@@ -35,84 +35,86 @@ const SubmitPetition = () => {
           коносамент и т.д
         </p>
         <div className="submit-petition__form--items submit-petition__form--items-back">
-          <p>Выберите файл...</p>
+          <p>Example.png</p>
           <img src={arrowRight} alt="arrow" />
         </div>
+        <p className="submit-petition__form--miniTitle-red">
+          *Данный документ не соответствует требованиям
+        </p>
 
         <p className="submit-petition__form--miniTitle">Инвойс</p>
         <div className="submit-petition__form--items submit-petition__form--items-back">
-          <p>Выберите файл...</p>
+          <p>Example1.png</p>
           <img src={arrowRight} alt="arrow" />
         </div>
 
         <p className="submit-petition__form--miniTitle">Упаковочный лист</p>
         <div className="submit-petition__form--items submit-petition__form--items-back">
-          <p>Выберите файл...</p>
+          <p>Example2.png</p>
           <img src={arrowRight} alt="arrow" />
         </div>
+        <p className="submit-petition__form--miniTitle-red">
+          *Данный документ не соответствует требованиям
+        </p>
 
         <p className="submit-petition__form--miniTitle">Конракт</p>
         <div className="submit-petition__form--items submit-petition__form--items-back">
-          <p>Выберите файл...</p>
+          <p>Example3.png</p>
           <img src={arrowRight} alt="arrow" />
         </div>
-
         <p className="submit-petition__form--miniTitle">
           Сертификат происхождения
         </p>
         <div className="submit-petition__form--items submit-petition__form--items-back">
-          <p>Выберите файл...</p>
+          <p>Example4.png</p>
           <img src={arrowRight} alt="arrow" />
         </div>
-
         <p className="submit-petition__form--miniTitle">
           Дополнительная документация
         </p>
         <div className="submit-petition__form--items submit-petition__form--items-back">
-          <p>Выберите файл...</p>
+          <p>Example5.png</p>
           <img src={arrowRight} alt="arrow" />
         </div>
-
         <p className="submit-petition__form--miniTitle">Фотографии товаров</p>
         <div className="submit-petition__form--items submit-petition__form--items-back">
-          <p>Выберите файл...</p>
+          <p>Example6.png</p>
           <img src={arrowRight} alt="arrow" />
         </div>
-
         <p className="submit-petition__form--miniTitle">
           Дополнительные услуги
         </p>
-
         <div className="submit-petition__form--checkbox">
           <input type="checkbox" />
           <p>Определение кодов ТНВЭД в “Узбекэспертиза”</p>
         </div>
-
         <div className="submit-petition__form--checkbox">
           <input type="checkbox" />
           <p>
             Составление договора ( контракта ) и сопроводительных документов{" "}
           </p>
         </div>
-
         <p className="submit-petition__form--miniTitle">Прочие документы</p>
         <div className="submit-petition__form--items submit-petition__form--items-back">
           <p>Выберите файл...</p>
           <img src={arrowRight} alt="arrow" />
         </div>
-
         <p className="submit-petition__form--miniTitle">Комментарий к заявке</p>
         <textarea
           className="submit-petition__form--comment"
           placeholder="Введите комментарий..."
         ></textarea>
-
-        <button className="submit-petition__form--button btn">
-          Подать заявку
-        </button>
+        <div className="submit-petition__form--buttons">
+          <button className="submit-petition__form--button btn">
+            Подать заявку
+          </button>
+          <button className="submit-petition__form--button submit-petition__form--button2 btn">
+            Отказаться
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default SubmitPetition;
+export default SubmitFollowSteps;

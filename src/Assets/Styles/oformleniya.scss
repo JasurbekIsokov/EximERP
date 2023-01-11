@@ -318,6 +318,11 @@
       margin-top: 15px;
     }
 
+    &--miniTitle-red {
+      color: #850000;
+      margin-top: -5px;
+    }
+
     &--items {
       display: flex;
       justify-content: space-between;
@@ -399,6 +404,18 @@
       font-size: 14px;
       line-height: 20px;
       color: #ffffff;
+    }
+
+    &--button2 {
+      width: 136px;
+      margin-left: 10px;
+      background: #850000;
+    }
+
+    &--buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
     }
   }
 }
