@@ -5,6 +5,7 @@ import { useStateContext } from "../Contexts/ContextProvider";
 import closeIcon from "../Assets/images/icons/close-icon.png";
 import arrowBottom from "../Assets/images/icons/arrow-blue.png";
 import arrowRight from "../Assets/images/icons/arrow-right-mini.png";
+import arrowLittleRight from "../Assets/images/icons/arrov-litle-right.png";
 
 const SubmitRejected = () => {
   const { handleToogleSubmitRejected, handletooglePetition } =
@@ -128,7 +129,145 @@ const SubmitRejected = () => {
               </div>
             </div>
           </div>
-          <div className="submit-rejected__form--right"></div>
+          <div className="submit-rejected__form--right">
+            <p className="submit-rejected__form--right-title">История</p>
+            <div className="submit-rejected__form--right-box">
+              <div className="submit-rejected__form--right-box-head">
+                <h2>Стадия изменена</h2>
+                <p>29.12.2022г. в 15:32</p>
+                <h2>Иван Иванович</h2>
+              </div>
+              <div className="submit-rejected__form--right-box-item">
+                <p>Оплата произведена</p>
+                <img src={arrowLittleRight} alt="arrowLittleRight" />
+                <p>Ожидание подтверждения клиентом</p>
+              </div>
+            </div>
+
+            <div className="submit-rejected__form--right-box">
+              <div className="submit-rejected__form--right-box-head">
+                <h2>Стадия изменена</h2>
+                <p>29.12.2022г. в 15:32</p>
+                <h2>Иван Иванович</h2>
+              </div>
+              <div className="submit-rejected__form--right-box-item">
+                <p>WON</p>
+                <img src={arrowLittleRight} alt="arrowLittleRight" />
+                <p>Выставить счёт на оплату</p>
+              </div>
+            </div>
+
+            <div className="submit-rejected__form--right-box">
+              <div className="submit-rejected__form--right-box-head">
+                <h2>Стадия изменена</h2>
+                <p>29.12.2022г. в 15:32</p>
+                <h2>Иван Иванович</h2>
+              </div>
+              <div className="submit-rejected__form--right-box-item">
+                <p>Оценка стоимости декларирования</p>
+                <img src={arrowLittleRight} alt="arrowLittleRight" />
+                <p>WON</p>
+              </div>
+            </div>
+
+            <div className="submit-rejected__form--right-box">
+              <div className="submit-rejected__form--right-box-head">
+                <h2>Стадия изменена</h2>
+                <p>29.12.2022г. в 15:32</p>
+                <h2>Иван Иванович</h2>
+              </div>
+              <div className="submit-rejected__form--right-box-item">
+                <p>Проверка документов</p>
+                <img src={arrowLittleRight} alt="arrowLittleRight" />
+                <p>Документы корректны</p>
+              </div>
+            </div>
+
+            <div className="submit-rejected__form--right-box">
+              <div className="submit-rejected__form--right-box-head">
+                <h2>Создана заявка</h2>
+                <p>29.12.2022г. в 15:32</p>
+                <h2>Олег Константинович</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="submit-rejected__form--midle">
+          <h2>Спецификация к декларированию</h2>
+
+          <div className="submit-rejected__form--midle-box">
+            <p>Наименование</p>
+            <p>Цена ( UZS )</p>
+            <p>Кол-во</p>
+            <p>Ед.измерения</p>
+            <p>Налог</p>
+            <p>НДС</p>
+            <p>ИТОГО</p>
+          </div>
+
+          <div className="submit-rejected__form--midle-box">
+            <p>Общая стоимость декларирования</p>
+            <p>900 000.00</p>
+            <p>900 000.00</p>
+            <p>шт.</p>
+            <p>15%</p>
+            <p>135 000</p>
+            <p>1 035 000.00</p>
+          </div>
+
+          <div className="submit-rejected__form--midle-box">
+            <p>2. Таможенные платежи: таможенные сборы</p>
+            <p>245 000.00</p>
+            <p>245 000.00</p>
+            <p>шт.</p>
+            <p>15%</p>
+            <p>0</p>
+            <p>245 000.00</p>
+          </div>
+          <div className="submit-rejected__form--midle-box">
+            <p>3. Таможенные платежи: Пошлина</p>
+            <p>24 500 000.00</p>
+            <p>24 500 000.00</p>
+            <p>шт.</p>
+            <p>15%</p>
+            <p>0</p>
+            <p>245 000.00</p>
+          </div>
+
+          <div className="submit-rejected__form--midle-box">
+            <p>3. Таможенные платежи: НДС</p>
+            <p>3 500 000.00</p>
+            <p>3 500 000.00</p>
+            <p>шт.</p>
+            <p>15%</p>
+            <p>0</p>
+            <p>350 000.00</p>
+          </div>
+        </div>
+
+        <div className="submit-rejected__form--sum">
+          <div>
+            <p>Сумма без НДС:</p>
+            <h2>29 145 000 UZS</h2>
+          </div>
+          <div>
+            <p>НДС:</p>
+            <h2>135 000 UZS</h2>
+          </div>
+          <div>
+            <p>Общая сумма:</p>
+            <h2>29 280 000 UZS</h2>
+          </div>
+        </div>
+
+        <div className="submit-rejected__form--buttons">
+          <button className="submit-rejected__form--button1 btn">
+            Согласиться с условиями
+          </button>
+          <button className="submit-rejected__form--button2 btn">
+            Отказаться
+          </button>
         </div>
       </div>
     </div>
