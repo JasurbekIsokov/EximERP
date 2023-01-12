@@ -8,7 +8,7 @@ import arrowRight from "../Assets/images/icons/arrow-right-mini.png";
 import arrowLittleRight from "../Assets/images/icons/arrov-litle-right.png";
 
 const SubmitRejected = () => {
-  const { handleToogleSubmitRejected, handletooglePetition } =
+  const { handleToogleSubmitRejected, handletooglePetition, closeHandleClick } =
     useStateContext();
   return (
     <div className="submit-rejected">
@@ -16,7 +16,7 @@ const SubmitRejected = () => {
       <div className="submit-rejected__form">
         <div
           className="submit-petition__form--close"
-          onClick={handleToogleSubmitRejected}
+          onClick={() => closeHandleClick("submitRejected")}
         >
           <img src={closeIcon} alt="close icon" />
         </div>

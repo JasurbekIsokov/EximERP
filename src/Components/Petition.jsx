@@ -10,12 +10,7 @@ import SubmitPetition from "./SubmitPetition";
 import SubmitRejected from "./SubmitRejected";
 
 const Petition = () => {
-  const {
-    handletooglePetition,
-    tooglePetition,
-    toogleSubmitFollowSteps,
-    toogleSubmitRejected,
-  } = useStateContext();
+  const { isClicked, handleClick } = useStateContext();
 
   return (
     <>
@@ -24,37 +19,31 @@ const Petition = () => {
           <p>Таможенное оформление</p>
           <button
             className="petition__head--send-btn btn"
-            onClick={handletooglePetition}
+            onClick={() => handleClick("submitPetition")}
           >
             + Подать заявку
           </button>
         </div>
-
-        <Rejected />
-        <Processing />
-        <Completed />
-        <FollowSteps />
+        <Rejected customeFunc={() => handleClick("submitRejected")} />
+        <Processing customeFunc={() => handleClick("submitRejected")} />
+        <Completed customeFunc={() => handleClick("submitRejected")} />
+        <FollowSteps customeFunc={() => handleClick("submitFollowSteps")} />
       </div>
 
       <div
         className="petition__back"
-        style={{ display: tooglePetition ? "inline-block" : "none" }}
+        style={{
+          display:
+            isClicked.submitPetition ||
+            isClicked.submitFollowSteps ||
+            isClicked.submitRejected
+              ? "inline-block"
+              : "none",
+        }}
       >
-        {tooglePetition && <SubmitPetition />}
-      </div>
-
-      <div
-        className="petition__back"
-        style={{ display: toogleSubmitFollowSteps ? "inline-block" : "none" }}
-      >
-        {toogleSubmitFollowSteps && <SubmitFollowSteps />}
-      </div>
-
-      <div
-        className="petition__back"
-        style={{ display: toogleSubmitRejected ? "inline-block" : "none" }}
-      >
-        {toogleSubmitRejected && <SubmitRejected />}
+        {isClicked.submitPetition && <SubmitPetition />}
+        {isClicked.submitFollowSteps && <SubmitFollowSteps />}
+        {isClicked.submitRejected && <SubmitRejected />}
       </div>
     </>
   );

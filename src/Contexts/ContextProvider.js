@@ -4,6 +4,10 @@ const StateContext = createContext();
 
 const initialState = {
   submitPetition: false,
+  submitRejected: false,
+  submitProcessing: false,
+  submitCompleted: false,
+  submitFollowSteps: false,
 };
 
 export const ContextProvider = ({ children }) => {
@@ -16,11 +20,9 @@ export const ContextProvider = ({ children }) => {
   const [activeDataFollowSteps, setActiveDataFollowSteps] = useState(false);
   const [closeDataFollowSteps, setCloseDataFollowSteps] = useState(true);
   const [toogleNavLink, setToogleNavLink] = useState(false);
-  const [tooglePetition, setTooglePetition] = useState(false);
-  const [toogleSubmitFollowSteps, setToogleSubmitFollowSteps] = useState(false);
-  const [toogleSubmitRejected, setToogleSubmitRejected] = useState(false);
 
   const [isClicked, setIsClicked] = useState(initialState);
+
   // icons clicked
   const dataOpenClickedRejected = () => {
     if (activeDataRejected) {
@@ -82,32 +84,12 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
-  const handletooglePetition = () => {
-    if (tooglePetition) {
-      setTooglePetition(false);
-    } else {
-      setTooglePetition(true);
-    }
-  };
-
-  const handleToogleSubmitFollowSteps = () => {
-    if (toogleSubmitFollowSteps) {
-      setToogleSubmitFollowSteps(false);
-    } else {
-      setToogleSubmitFollowSteps(true);
-    }
-  };
-
-  const handleToogleSubmitRejected = () => {
-    if (toogleSubmitRejected) {
-      setToogleSubmitRejected(false);
-    } else {
-      setToogleSubmitRejected(true);
-    }
-  };
-
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true });
+  };
+
+  const closeHandleClick = (clicked) => {
+    setIsClicked({ ...initialState, [clicked]: false });
   };
 
   return (
@@ -139,17 +121,10 @@ export const ContextProvider = ({ children }) => {
 
         toogleNavLink,
 
-        handletooglePetition,
-        tooglePetition,
-
-        toogleSubmitFollowSteps,
-        handleToogleSubmitFollowSteps,
-
-        toogleSubmitRejected,
-        handleToogleSubmitRejected,
-
         isClicked,
+        setIsClicked,
         handleClick,
+        closeHandleClick,
         initialState,
       }}
     >

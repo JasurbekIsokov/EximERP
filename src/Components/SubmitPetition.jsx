@@ -6,8 +6,7 @@ import arrowBottom from "../Assets/images/icons/arrow-blue.png";
 import arrowRight from "../Assets/images/icons/arrow-right-mini.png";
 
 const SubmitPetition = () => {
-  const { handletooglePetition, tooglePetition, handleClick } =
-    useStateContext();
+  const { closeHandleClick } = useStateContext();
 
   return (
     <div className="submit-petition">
@@ -15,7 +14,7 @@ const SubmitPetition = () => {
       <div className="submit-petition__form">
         <div
           className="submit-petition__form--close"
-          onClick={handletooglePetition}
+          onClick={() => closeHandleClick("submitPetition")}
         >
           <img src={closeIcon} alt="close icon" />
         </div>

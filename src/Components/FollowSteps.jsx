@@ -3,13 +3,9 @@ import React from "react";
 import { useStateContext } from "../Contexts/ContextProvider";
 import arrowBottomGray from "../Assets/images/icons/arrow-gray.png";
 
-const FollowSteps = () => {
-  const {
-    activeDataFollowSteps,
-    closeDataFollowSteps,
-    dataOpenClickedFollowSteps,
-    handleToogleSubmitFollowSteps,
-  } = useStateContext();
+const FollowSteps = ({ customeFunc }) => {
+  const { activeDataFollowSteps, dataOpenClickedFollowSteps } =
+    useStateContext();
 
   return (
     <div className="all-petition followSteps">
@@ -19,10 +15,7 @@ const FollowSteps = () => {
           <p>от 15 октября 2020г. в 16:18</p>
         </div>
         <div className="all-petition__main--right">
-          <button
-            className="followSteps-btn btn"
-            onClick={handleToogleSubmitFollowSteps}
-          >
+          <button className="followSteps-btn btn" onClick={customeFunc}>
             Выполните действия
           </button>
           <img

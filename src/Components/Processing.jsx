@@ -3,13 +3,8 @@ import React from "react";
 import { useStateContext } from "../Contexts/ContextProvider";
 import arrowBottomGray from "../Assets/images/icons/arrow-gray.png";
 
-const Processing = () => {
-  const {
-    activeDataProcessing,
-    closeDataProcessing,
-    dataOpenClickedProcessing,
-    handleToogleSubmitRejected,
-  } = useStateContext();
+const Processing = ({ customeFunc }) => {
+  const { activeDataProcessing, dataOpenClickedProcessing } = useStateContext();
 
   return (
     <div className="all-petition processing">
@@ -19,10 +14,7 @@ const Processing = () => {
           <p>от 15 октября 2020г. в 16:18</p>
         </div>
         <div className="all-petition__main--right">
-          <button
-            className="processing-bnt btn"
-            onClick={handleToogleSubmitRejected}
-          >
+          <button className="processing-bnt btn" onClick={customeFunc}>
             В обработке
           </button>
           <img
